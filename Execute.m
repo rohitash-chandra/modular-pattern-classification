@@ -1,8 +1,6 @@
-% CCGA for FNN by Rohitash Chandra, 2016: c.rohitash(at)gmail.com
-%note this is for hidden layer. But many other layer can be done
-
-% can use for classfication and also for time series predition or
-% regression. 
+%   by Rohitash Chandra, 2017: c.rohitash(at)gmail.com
+ 
+%  for classfication  
 
 
 
@@ -24,40 +22,23 @@ MaxFE = 40000 * NumSteps ; % 4bit
 
  MinError = [0.00000001]; %Min Error for each problem
  
- NumProb = 7;
+ NumProb = 1;
  
   ProbMin = [-5]; % initial pop range
   ProbMax = [5];
    
   
 
-In = [13, 4,  34, 16, 9, 4, 13, 4, 24, 15, 4, 9, 4] ; % state input for Wine, Iris, 6Bit
-Hidd = [8, 5,  8, 6, 6, 5, 8, 14, 14, 18, 5, 28, 6];
-Outdata = [3, 2, 1, 1, 1, 3, 1, 4, 4, 1, 1, 3]; % state out for each data
+In = [13 ] ; % state input for Wine
+Hidd = [8];
+Outdata = [3]; % output classes
  
- Decom = 5; % type of decomposition of NN. 1 = Layer level, 2 = Network level, 3 = NSP, 4 = Synapse level, 5 is ESP
+ Decom = 5; % type of decomposition of NN. 1 = Layer level, 2 = Network level, 3 = NSP, 4 = Synapse level, 5 is ESP (leave it as it is)
 
 MaxRun = 3  ;
 
-%for app = 8:9
-
-    if app == 7
-        MaxFE = MaxFE * 2;
-    end
-    
-    if app == 8
-        MaxFE = MaxFE * 3;
-    end
-
-
-    if app == 9
-        MaxFE = MaxFE * 3;
-    end
-    
-    
-    if app == 10
-        MaxFE = MaxFE * 3;
-    end
+ 
+   
 
 
   for depth = 8:4:8
